@@ -1,0 +1,124 @@
+
+header{
+    height: 100px;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top:0;
+    transition: all .3s;
+   
+    .header__content{
+       height: 100%;
+    .navbar {
+        padding: 0;
+        height: 100%;
+        justify-content: space-between;
+            .myNav__left{
+                 height: 100%;
+                 padding-left:$pd-30 ;
+                 .navbar-brand{
+                    height: 100%;
+                    padding: 0;
+                     img{
+                        height: 100%;
+                     }
+                 }
+            }
+            .myNav__right{
+                transition: all .3s;
+                padding-right:$pd-30 ;
+                #massiveNav{
+                    .navbar-nav{ 
+                       .nav-item{ 
+                           &.active{
+                            .nav-link{
+                                color: $color-gold-0;
+                            }
+                           }
+                           .nav-link{
+                               @include styleText($color-white-0,$fs-2 + 1,$fw-1);
+                               text-transform: uppercase;
+                               padding: 0 $pd-10 + 2;
+                                white-space: nowrap;
+                               transition: all 0.3s;
+                               &:hover{
+                                   color: $color-gold-0;
+                               }
+                           }
+                           .disables{
+                               pointer-events: none;
+                               cursor: none;
+                           }
+                       } 
+                    }
+                }
+            }
+            .navbar-toggler{
+                color: $color-white-0;
+                font-size: $fs-5;
+              
+            }
+    }
+}
+    // Responsive
+    @include reponsive("lg"){
+        height: 64px;
+        background-color: $color-black-6;
+        .header__content{
+            .navbar {
+                .myNav__left{
+                   width: 100%;
+                   display: flex;
+                   justify-content: space-between;
+                    padding:0 $pd-30 ;
+                   
+               }
+               .myNav__right{
+                width: 100%;
+                padding: 0;
+                
+                #massiveNav{
+                    .navbar-nav{
+                        background-color: $color-black-6;
+                        padding: 0 $pd-30;
+                       .nav-item{
+                             background-color: $color-white-0;
+                             padding: $pd-10 + 2 $pd-20;
+                             border: 1px solid $color-white-7;
+                             position: relative; 
+                             &:nth-of-type(8){
+                                 display: none;
+                             } 
+                           .nav-link{
+                               color: $color-gray-2;
+                               padding: 0;
+                               display: flex;
+                               justify-content: space-between;
+                              
+                            span{
+                                &:last-child{
+                                font-size: $fs-5 - 2;
+                                width: 60px;
+                                height: 45px;
+                                border-left:1px solid $color-white-4 ;
+                                text-align: center;
+                                line-height: 45px;
+                                position: absolute;
+                                top:0;
+                                right: 0;
+                            
+                                }
+
+                            }
+                               }
+                           }
+                       } 
+                    }
+                }
+            } 
+            }
+        }
+    @include reponsive("md"){
+            height: 50px;
+        }
+    }

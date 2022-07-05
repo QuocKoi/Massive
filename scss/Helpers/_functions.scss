@@ -1,0 +1,4 @@
+@function pareRem($default,$current) {
+    $rem:$current / $default;
+    @return #{$rem}rem; 
+};

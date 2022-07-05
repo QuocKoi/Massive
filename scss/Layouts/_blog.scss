@@ -1,0 +1,103 @@
+.blog{
+    padding: $pd-100 0 ;
+    .blog__content{
+        .blog--col{
+            padding: 0 $pd-30;
+        }
+        .blog--col2{
+            padding:$pd-30;
+        }
+        .blog__img{
+            position: relative;
+            img{
+                width: 100%;
+            }
+            p{
+                color: $color-white-0;
+                padding: $pd-10;
+                background-color: $color-black-2;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                margin: 0;
+            }
+        }
+        .blog__post{
+            margin-bottom: $m-10;
+            span{
+                a{
+                    @include styleText($color-gray-10,$fs-2,$fw-1);
+                    text-decoration: none;
+                    letter-spacing: 1px;
+                    transition: all .3s;
+                    &:hover{
+                        color: $color-gold-0;
+                    }
+                }
+                &:first-child{
+                    margin-right: $m-10;
+                }
+            }
+          
+        }
+        h4{
+            margin-bottom: $m-10;
+            a{
+                @include styleText($color-gray-1,$fs-4,$fw-1);
+                letter-spacing: 1px;
+                text-decoration: none;
+                transition: all .3s;
+                &:hover{
+                    color: $color-gold-0;
+                }
+            }
+           
+
+        }
+        .blog__date{
+            margin-bottom: $m-25;
+            p{
+                display: inline-block;
+                margin: 0;
+                @include styleText($color-gray-10,$fs-2,$fw-1);
+                letter-spacing: 2px;
+                &:first-child{
+                    span{
+                        margin: 0 $m-5 0 $m-10;
+                    }
+                    a{
+                     @include styleText($color-gray-10,$fs-2,$fw-1);
+                     text-decoration: none;
+                     transition: all .3s;
+                     &:hover{
+                         color: $color-gold-0;
+                     } 
+                    }
+                 }   
+            }
+        
+        }
+        p{
+            color: $color-gray-0;
+            line-height: 30px;
+            margin-bottom: $m-30;
+        }
+        .blog__readMore{
+            a{
+                letter-spacing: 1px;
+                color: $color-gray-11;
+                text-decoration: none;
+                transition: all .3s;
+                &:hover{
+                    color: $color-gray-1;
+                }
+                i{
+                    margin-left: $m-10;
+                }
+            }
+        }
+
+    }
+    // Responsive
+ 
+}

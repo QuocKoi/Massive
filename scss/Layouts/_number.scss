@@ -1,0 +1,27 @@
+.number{
+    background-color: $color-black-1;
+    padding: $pd-100 0;
+    .number--col{
+        padding:0 $pd-30;
+    }
+    .number__content{
+        text-align: center;
+        .number__icon{
+            @include styleText($color-white-0,$fs-6,$fw-1);
+            margin-bottom: $m-10;
+            i{
+                padding-right:$pd-10;
+            }
+        }
+        p{
+            letter-spacing: 1px;
+            color: $color-white-0;
+        }
+    }
+    // Reponsive
+    @include reponsive("lg"){
+        .number--col{
+            padding:$pd-30;
+        }
+    }
+}

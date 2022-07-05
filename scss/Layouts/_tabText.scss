@@ -1,0 +1,86 @@
+.tabText{
+    padding: $pd-100 0;
+    background-image: url(../img/pattern-2.png);
+    @extend %backgroundImg;
+    .tabText__content{
+        #myTabText{
+            border: none;
+          .nav-item{
+              margin-right: $m-20;
+              .nav-link{
+                  padding: $pd-30 + 5 $pd-60 + 10;
+                  background-color: $color-black-4;
+                  @include styleText($color-gray-12,$fs-6,$fw-1);
+                  border:none;
+                  border-radius: 0;
+                  transition: all .3s ease;
+                  position: relative;
+                  &::after{
+                    @include createArrowDown($fs-2 - 2,$color-white-0);
+                    position: absolute;
+                    top:100%;
+                    left: 50%;
+                    transition: all .3s ease;
+                    opacity: 0;
+                    transform: translateX(-50%);
+  
+                }
+                  &:hover::after{
+                    opacity: 1;
+                }
+                  &:hover{
+                    background-color: $color-white-0;  
+                  }
+                  &.active{
+                    background-color: $color-white-0; 
+                    &::after{
+                        opacity: 1;
+                    } 
+                  }
+              }
+          }  
+        }
+        #myTabTextContent{
+            padding: $pd-30 0;
+            .tab-pane{
+                line-height: 30px;
+                p{
+                    margin: 0;
+                    &:first-of-type{
+                        letter-spacing: 2px;
+                        @include styleText($color-gray-0,$fs-3 - 1,$fw-1);
+                    }
+                }
+                h2{
+                    letter-spacing: 2px;
+                    line-height: 1.5;
+                    margin-bottom: $m-60 - 10;
+                    @include styleText($color-gray-2,$fs-default * 2,$fw-1);
+                }
+            }
+   
+        }
+
+    }
+    // Responsive
+    @include reponsive("md"){
+        .tabText__content{
+            #myTabText{
+                padding: 0 $pd-30;
+                flex-direction: column;
+                .nav-item{
+                    margin-bottom: $m-15;
+                    margin-right: 0;
+                }
+            }
+            #myTabTextContent{
+                padding: 0 $pd-30;
+                .tab-pane{
+                    h2{
+                        font-size: $fs-4 + 2;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.showCase{
+    padding: $pd-100 0;
+    .title{
+        padding: 0;
+    }
+    .showCase__content{
+        #showTab{
+            justify-content: center;
+            border: transparent;
+            .nav-item{
+                .nav-link{
+                    &.active{
+                        color: $color-gray-1;
+                    }
+                    border: transparent;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    @include styleText($color-gray-8,$fs-3 - 1,$fw-1)
+                }
+            }
+        }
+        #showCaseTabContent{
+            margin-top: $m-30 + 10;
+            .row{
+                margin: 0;
+            }
+            .show__item{
+                position: relative;
+                img{
+                    width: 100%;
+                }
+                .show__hover{
+                   @include boxHover($color-white-1,$color-black-0);
+                    .show__icon{
+                        font-size: $fs-6 - 1;
+                        position: absolute;
+                        width: 100%;
+                        top:10%;
+                        transition: all .3s;
+                        i{
+                            color: $color-gray-1;
+                        }
+
+                    }
+                    .show__description{
+                        position: absolute;
+                        bottom: 20%;
+                        width: 100%;
+                        transition: all .3s;
+                        h4{
+                            font-size: $fs-3 - 1;
+                            margin-bottom: $m-5;
+                            letter-spacing: 4px;
+                            a{
+                               color: $color-gray-1;
+                                 text-decoration: none;
+                                 transition: all 0.3s;
+                            }
+                            &:hover{
+                                a{
+                                    color: $color-gold-0;
+                                }
+                            }
+                        }
+                        p{
+                            font-size: $fs-2;
+                            margin-bottom:0;
+                            letter-spacing: 3px;
+                            a{
+                               color: $color-gray-9;
+                                 text-decoration: none;
+                                 transition: all .3s;
+                            }
+                            &:hover{
+                                a{
+                                    color: $color-gold-0;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    .show__hover{
+                        opacity: 1;
+                        .show__icon{
+                            transform: translateY(45%);
+                        }
+                        .show__description{
+                            transform: translateY(-5%);
+                        }
+                    }
+                }
+                .owl-theme .owl-dots{
+                    position: absolute;
+                    right: 0;
+                    margin: 0;
+                    bottom: 0;
+                    z-index: 2;
+                    .owl-dot{
+                        span{
+                            background: transparent;
+                            border: 1px solid $color-white-0;
+                        }
+                        &.active{
+                            span{
+                                background: $color-white-0;
+                            }
+                        }
+                    }
+                }
+                .owl-carousel,.owl-carousel .owl-stage-outer{
+                    position: static;
+                }
+            }
+        }
+    }
+}

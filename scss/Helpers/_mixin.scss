@@ -1,0 +1,52 @@
+@mixin styleText($color,$fs,$fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin styleButton($color,$bg,$border-color,$fs,$fw,$pd-y,$pd-x){
+    outline: none;
+    color: $color;
+    background: $bg;
+    font-size: $fs;
+    font-weight: $fw;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid $border-color;
+    padding: $pd-y $pd-x;
+    transition: all .3s;
+}
+@mixin hoverButton($color,$bg,$border-color){
+    color: $color;
+    background: $bg;
+    border: 1px solid $border-color;
+}
+@mixin boxHover($bg,$color-border) {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top:0;
+        left: 0;
+        background: $bg;
+        border: 20px solid $color-border;
+        opacity: 0;
+        transition: all 0.3s;
+        text-align: center;
+}
+@mixin createArrowDown($size,$bg) {
+    content: "";
+    border: $size solid transparent;
+    border-top-color:$bg;
+    display: block;
+}
+@mixin reponsive($screen) {
+    @if map-has-key($map: $breakPoints, $key:$screen ) {
+        $value:map-get($map: $breakPoints, $key:$screen );
+            @media screen and (max-width:$value) {
+                @content;
+            }
+        }
+        @else{
+            @warn "`{$screen}`isnt exist inh breakPoints";
+        }
+}

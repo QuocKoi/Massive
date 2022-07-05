@@ -1,0 +1,22 @@
+.button--black{
+    @include styleButton($color-white-0,$color-gray-1,transparent,$fs-3 - 1,normal,$pd-15,$pd-30);
+    white-space: nowrap;
+    &:hover{
+        @include hoverButton($color-white-0,$color-gold-0,transparent);
+    }
+    // Responsive
+    @include reponsive("md"){
+        font-size: $fs-2;
+    }
+}
+.button--gold{
+    @include styleButton($color-white-0,$color-gold-0,transparent,$fs-3 - 1,normal,$pd-15,$pd-30);
+    white-space: nowrap;
+    &:hover{
+        @include hoverButton($color-gray-1,$color-white-0,transparent);
+    }
+    // Responsive
+    @include reponsive("md"){
+        font-size: $fs-2;
+    }
+}

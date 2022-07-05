@@ -1,0 +1,27 @@
+.banner{
+    padding: 150px 0;
+    background-image: url(../img/8.jpg);
+    @extend %backgroundImg;
+   
+    .banner__content{
+        text-align: center;
+        p{
+            @include styleText($color-gold-0,$fs-3 + 1,$fw-1);
+            letter-spacing: 3px;
+            margin: 0;
+        }
+        h1{
+            @include styleText($color-white-0,$fs-6,$fw-1);
+            letter-spacing: 2px;
+            margin-bottom: $m-60 - 10;
+        }
+    }
+    // Responsive
+    @include reponsive("md"){
+        .banner__content{
+            h1{
+                font-size: $fs-5 + 2;
+            }
+        }
+    }
+}

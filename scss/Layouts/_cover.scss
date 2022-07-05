@@ -1,0 +1,33 @@
+.cover{
+    background-image: url(../img/index-banner-2.jpg);
+    height: 651px;
+    @extend %backgroundImg;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .cover__content{
+        h1{
+         @include styleText($color-white-0,$fs-1,$fw-3);
+         letter-spacing: 5px;
+         margin: 0;
+         line-height: normal;
+        }
+        p{
+            @include styleText($color-white-0,$fs-4 + 2,$fw-1);
+            letter-spacing: 6px;
+            margin: 0;
+        }
+    }
+    // Responsive
+    @include reponsive("md"){
+        .cover__content{
+            h1{
+                font-size:$fs-6 - 6 ;
+            }
+            p{
+                font-size: $fs-4;
+            }
+        }
+    }
+}
